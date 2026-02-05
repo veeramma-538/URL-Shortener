@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortner</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>Link Shortner</h1>
+
+        <div class="input-group">
+            <input type="url" id="longUrl" placeholder="Enter your link (ex: https://monsite.com/page-tres-longue)" required>
+            <button id="shortenBtn">Shorten</button>
+        </div>
+
+        <div id="resultContainer" class="result-container" style="display: none;">
+            <p> </p>
+            <input type="text" id="shortUrl" readonly>
+            <button id="copyBtn">Copier</button>
+            <div class="loader" id="loader"></div>
+
+        </div>
+        
+        <p id="message" class="message"></p>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>

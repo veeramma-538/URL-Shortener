@@ -1,0 +1,151 @@
+:root {
+    --bg-color: #1a1a2e;        /* Main background color (dark blue/indigo) */
+    --card-color: #21253c;      /* Card or main container color */
+    --text-color: #e9e4f0;      /* Primary text color (off-white) */
+    --primary-color: #007bff;   /* Primary button color (Blue) */
+    --primary-hover: #5090f4;   /* Hover color for primary button */
+    --success-color: #28a745;   /* Success/copy button color (Green) */
+    --success-hover: #37d65b;   /* Hover color for success button */
+    --border-color: #3f3e53;    /* Border and subtle separator color */
+    --message-color: #ffda79;   /* Alert or success message color (Yellow/Orange) */
+}
+
+/* ================================================= */
+/* GENERAL STYLES */
+/* ================================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern and readable font */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Takes full viewport height */
+    margin: 0;
+}
+
+/* Main application container (the "card") */
+.container {
+    background: var(--card-color);
+    padding: 35px;
+    border-radius: 15px; /* Rounded corners for a soft look */
+    /* Subtle and deep shadow to create a 3D effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+}
+
+/* Application title */
+h1 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 300; /* Lighter font weight for a modern look */
+}
+
+/* ================================================= */
+/* ELEMENT LAYOUT (INPUTS AND BUTTONS) */
+/* ================================================= */
+.input-group, .result-container {
+    display: flex;
+    gap: 15px; /* Space between elements (input and button) */
+    margin-bottom: 25px;
+    align-items: center; /* Vertically center elements */
+}
+
+/* Styles for input fields (long URL and short URL) */
+#longUrl, #shortUrl {
+    flex-grow: 1; /* Allows the input to take remaining space */
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #3f3e53; /* Darker background than the card */
+    color: var(--text-color);
+    /* Inner shadow to create a "pressed" effect */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* Specific style for the shortened URL input */
+#shortUrl {
+    background-color: #2c2b44; /* Even darker to show it's read-only */
+    cursor: default; /* Standard cursor */
+}
+
+/* ================================================= */
+/* BUTTON STYLES */
+/* ================================================= */
+#shortenBtn, #copyBtn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    /* Transition for hover effects */
+    transition: background-color 0.3s, transform 0.1s; 
+    text-transform: uppercase; /* Uppercase text for a bold visual style */
+}
+
+/* Shorten button */
+#shortenBtn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#shortenBtn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px); /* Slight upward movement on hover */
+}
+
+/* Copy button */
+#copyBtn {
+    background-color: var(--success-color);
+    color: white;
+}
+
+#copyBtn:hover {
+    background-color: var(--success-hover);
+    transform: translateY(-1px); /* Slight upward movement on hover */
+}
+
+/* ================================================= */
+/* RESULT AND MESSAGES */
+/* ================================================= */
+
+/* "Shortened URL:" text inside the result container */
+.result-container p {
+    margin: 0;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents text from wrapping to multiple lines */
+    padding-top: 5px; 
+}
+
+/* Error/success message displayed below */
+.message {
+    color: var(--message-color);
+    font-weight: 600;
+    margin-top: 10px;
+    /* Reserves a small height to prevent layout shift */
+    min-height: 20px; 
+}
+/* ================================ */
+/* LOADING SPINNER */
+/* ================================ */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid transparent;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
