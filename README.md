@@ -43,7 +43,7 @@ Link-Shortener/
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/veeramma-538/link-shortener.git
+   git clone https://github.com/veeramma-538/URL-Shortener.git
    ```
 
 2. Open the project folder
